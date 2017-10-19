@@ -44,7 +44,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-mongoose.connect('mongodb://localhost/charapp');
+//mongoose.connect('mongodb://localhost/charapp');
+mongoose.connect('mongodb://vasuki:vasuki@ds115085.mlab.com:15085/char_app')
 app.use(require('./routes'));
 app.use('/', index);
 app.use('/users', users);
