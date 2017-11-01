@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl} from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Errors, UserService } from "../shared";
-import {User} from "../shared/models/user.model";
 
 @Component({
 	selector: 'auth-page',
@@ -44,7 +43,7 @@ export class AuthComponent implements OnInit {
 
 	   this.userService.attemptAuth(this.authType, credentials)
        .subscribe(
-         data => this.router.navigateByUrl('/'),
+         data => this.router.navigateByUrl('home'),
          err => {
            this.errors =err;
            this.isSubmitting = false;

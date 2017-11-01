@@ -22,6 +22,18 @@ router.post('/users', function(req,res,next){
 	}).catch(next);
 });
 
+router.get('/user', function(req, res) {
+    User.find({}, function(err, users) {
+        var userMap = {};
+
+        users.forEach(function(user) {
+            userMap[user._id] = user;
+        });
+
+        res.send(userMap);
+    });
+});
+
 router.post('/users/login', function(req,res,next){
 	if(!req.body.user.email){
 		return res.status(422).json({errors:{email:"cannot be Null"}});

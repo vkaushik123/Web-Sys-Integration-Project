@@ -4,7 +4,6 @@ var router = express.Router();
 router.use('/', require('./users'));
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	console.log('index.js');
   res.render('index', { title: 'Express' });
 });
 

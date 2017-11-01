@@ -1,7 +1,7 @@
 import { ModuleWithProviders,NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthModule } from './auth/auth.module';
 import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
@@ -15,6 +15,7 @@ import {
 	FooterComponent,
 	HeaderComponent
 } from './shared';
+
 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([],{ useHash:true});
 
@@ -30,7 +31,8 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([],{ useHash:true}
     SharedModule,
     HomeModule,
     rootRouting,
-    SettingsModule
+    SettingsModule,
+    NgbModule.forRoot()
   ],
   providers: [
     ApiService,

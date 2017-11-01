@@ -1,10 +1,11 @@
 <div class="auth-page">
   <div class="cotainer page">
-  	<div class="row">
+    <div class="row">
+  	<div class="col-md-4 offset-md-3 col-xs-12">
 
-  		<div class="col-md-6">
-  			<h1 class="text-xs-center">{{ title }}</h1>
-  			<p class="text-xs-center">
+  		<div>
+  			<h1>{{ title }}</h1>
+  			<p>
   				<a [routerLink]="['/login']" *ngIf="authType == 'register'">Have an account?</a>
   				<a [routerLink]="['/register']" *ngIf="authType == 'login'">Need an account?</a>
   			</p>
@@ -18,28 +19,29 @@
   						  placeholder="Username"
   						  class="form-control form-control-lg"
   						  type="text"
-  						  *ngIf="authType=='register'"/>
+  						  *ngIf="authType=='register'" required/>
   					</fieldset>
   					<fieldset class="form-group">
   						<input
   						  formControlName="email"
   						  placeholder="Email"
   						  class="form-control form-control-lg"
-  						  type="text" />
+  						  type="text" ngModel required/>
   					</fieldset>
             <fieldset class="form-group">
               <input
                 formControlName="password"
                 placeholder="Password"
                 class="form-control form-control-lg"
-                type="password" />
+                type="password" ngModel required/>
             </fieldset>
-  					<button class="btn btn-lg btn-primary pull-xs-right" type="submit">
+  					<button class="btn pull-left" type="submit">
   						{{ title }}
   					</button>
   				</fieldset>
   			</form>
   		</div>
   	</div>
+    </div>
   </div>
 </div>
