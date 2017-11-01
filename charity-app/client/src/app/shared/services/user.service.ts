@@ -26,7 +26,7 @@ export class UserService {
 
   populate(){
     if(this.jwtService.getToken()){
-      this.apiService.get('/user')
+      this.apiService.get('/users')
         .subscribe(
           data => this.setAuth(data.user),
           err => this.purgeAuth()
