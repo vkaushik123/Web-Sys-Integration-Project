@@ -24,13 +24,12 @@ router.post('/users', function(req,res,next){
 
 router.get('/user', function(req, res) {
     User.find({}, function(err, users) {
-        var userMap = {};
-
+        var userMap = [];
         users.forEach(function(user) {
-            userMap[user._id] = user;
+        	userMap.push({email:user.email});
         });
-
-        res.send(userMap);
+        res.contentType('application/json');
+        res.send(JSON.stringify(userMap));
     });
 });
 

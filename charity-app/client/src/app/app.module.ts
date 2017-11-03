@@ -15,6 +15,8 @@ import {
 	FooterComponent,
 	HeaderComponent
 } from './shared';
+import {NgoModule} from "./ngo/ngo.module";
+import {NgoService} from "./shared/services/ngo.service";
 
 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([],{ useHash:true});
@@ -32,13 +34,15 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([],{ useHash:true}
     HomeModule,
     rootRouting,
     SettingsModule,
+    NgoModule,
     NgbModule.forRoot()
   ],
   providers: [
     ApiService,
     AuthGuard,
     JwtService,
-    UserService
+    UserService,
+    NgoService
   ],
   bootstrap: [AppComponent]
 })
