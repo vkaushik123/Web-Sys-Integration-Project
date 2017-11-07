@@ -5,6 +5,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthModule } from './auth/auth.module';
 import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
+import { ProfileModule } from './profile/profile.module';
 import { SettingsModule } from './settings/settings.module';
 import {
   ApiService,
@@ -13,6 +14,7 @@ import {
 	SharedModule,
   JwtService,
 	FooterComponent,
+  ProfileService,
 	HeaderComponent
 } from './shared';
 import {NgoModule} from "./ngo/ngo.module";
@@ -33,6 +35,7 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([],{ useHash:true}
     SharedModule,
     HomeModule,
     rootRouting,
+    ProfileModule,
     SettingsModule,
     NgoModule,
     NgbModule.forRoot()

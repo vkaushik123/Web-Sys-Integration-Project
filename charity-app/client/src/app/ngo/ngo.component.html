@@ -2,7 +2,14 @@
 <h2>
   Ngo list
 </h2>
-<ul *ngFor="let ngo of ngo">
-  <li>{{ngo.email}}</li>
-</ul>
+  <div class="row">
+     <div class="col-xs-4">
+       <a href="#" class="list-group-item clearfix"
+          *ngFor="let ngo of ngo">
+         <div class="pull-left">
+           <h4 class="list-group-item-heading">{{ngo.ngoObj.email}}</h4>
+         </div>
+       </a>
+     </div>
+  </div>
 </div>

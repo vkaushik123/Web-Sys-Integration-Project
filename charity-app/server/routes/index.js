@@ -7,6 +7,8 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.use('/profile', require('./profile'));
+
 router.use(function(err,req,res,next){
 	if(err.name === 'ValidationError'){
 		return res.status(422).json({

@@ -14,6 +14,11 @@ const authRouting: ModuleWithProviders = RouterModule.forChild([
      path:'register',
      component:AuthComponent,
      canActivate:[NoAuthGaurd]
+  },
+  {
+    path:'ngoregister',
+    component:AuthComponent,
+    canActivate:[NoAuthGaurd]
   }
 ]);
 

@@ -23,10 +23,10 @@ router.post('/users', function(req,res,next){
 });
 
 router.get('/user', function(req, res) {
-    User.find({}, function(err, users) {
+    User.find({org:true}, function(err, users) {
         var userMap = [];
         users.forEach(function(user) {
-        	userMap.push({email:user.email});
+        	userMap.push({ngoObj:user});
         });
         res.contentType('application/json');
         res.send(JSON.stringify(userMap));

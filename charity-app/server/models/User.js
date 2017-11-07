@@ -40,4 +40,12 @@ UserSchema.methods.toJSON = function(){
 		token:this.generateJWT(),
 	};
 };
+
+UserSchema.methods.toProfile = function(){
+	return{
+		username:this.username,
+		email:this.email,
+		org:this.org
+	};
+};
 mongoose.model('User',UserSchema);
