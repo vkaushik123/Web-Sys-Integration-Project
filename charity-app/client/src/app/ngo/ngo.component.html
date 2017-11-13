@@ -1,15 +1,20 @@
 <div class="ngo-page">
-<h2>
+<div class="container">
+  <h2>
   Ngo list
 </h2>
   <div class="row">
-     <div class="col-xs-4">
-       <a href="#" class="list-group-item clearfix"
+    <div class="col-md-4">
+     <ul class="list-group">
+       <a href="#" class="list-group-item clearfix" [routerLink]="['/profile', ngo.ngoObj.email]"
           *ngFor="let ngo of ngo">
-         <div class="pull-left">
-           <h4 class="list-group-item-heading">{{ngo.ngoObj.email}}</h4>
+         <div>
+           <p class="list-group-item-heading">{{ngo.ngoObj.email}}</p>
+           <button type="button" class="btn btn-primary btn-md" (click)="openCheckout()">Pay</button>
          </div>
        </a>
-     </div>
+     </ul>
+    </div>
   </div>
+</div>
 </div>

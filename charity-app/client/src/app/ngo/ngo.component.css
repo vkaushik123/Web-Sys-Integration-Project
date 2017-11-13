@@ -1,0 +1,6 @@
+.list-group-item-heading,.btn{
+  display: inline-block;
+}
+.btn{
+  float: right;
+}

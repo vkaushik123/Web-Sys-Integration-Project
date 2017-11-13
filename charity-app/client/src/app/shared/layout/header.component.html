@@ -1,8 +1,8 @@
-<nav class="navbar fixed-top navbar-toggleable-md navbar-light bg-faded">
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar fixed-top navbar-toggleable-md navbar-inverse" >
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" routerLink="/">Application</a>
+  <a class="navbar-brand" routerLink="/home">Application</a>
 
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav pull-right">
@@ -10,7 +10,7 @@
         <a class="nav-link"
            routerLink="/settings"
            routerLinkActive="active">
-          <i class="ion-gear-a"></i>&nbsp;settings
+          <i class="glyphicon glyphicon-cog"></i>
         </a>
       </li>
       <li class="nav-item">
@@ -21,7 +21,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" routerLink="/home">Home</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['/login']" routerLinkActive="active">Sign In</a>

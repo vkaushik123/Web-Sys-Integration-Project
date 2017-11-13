@@ -16,6 +16,22 @@ export class ProfileComponent implements OnInit {
     private userService: UserService
   ){}
 
+  openCheckout(){
+      var handler = (<any>window).StripeCheckout.configure({
+        key:'pk_test_G1ger4QImeCjypjO0SAvTsU1',
+        locale:'auto',
+        token: function(token:any){
+
+        }
+      });
+
+      handler.open({
+        name:'Demo Site',
+        description: '2 widgets',
+        amount : 2000
+      });
+  }
+
   profile: Profile;
   currentUser:User;
   isUser: boolean;
