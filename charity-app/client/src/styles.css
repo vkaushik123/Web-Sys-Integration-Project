@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+html{
+  overflow-y: scroll;
+}
+body{
+  background-image: url("assets/Quotefancy-122914-3840x2160.jpg");
+  background-size: cover;
+}
