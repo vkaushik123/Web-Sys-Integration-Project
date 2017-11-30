@@ -1,44 +1,17 @@
-<div class="profile-page">
+<div class="overlay">
 
   <div class="user-info">
     <div class="container">
       <div class="row">
 
         <div class="col-xs-12 col-md-10 offset-md-1">
-          <h4>{{ profile.username }}</h4>
-          <a [routerLink]="['/settings']"
-             [hidden]="!isUser"
-             class="btn btn-sm btn-outline-secondary action-btn">
-            <i class="ion-gear-a"></i> Edit Profile Settings
-          </a>
-        </div>
-        <div>
-          <button (click)="openCheckout()" style="float:right">Purchase</button>
+          <h1>Profile Page</h1>
+          <h1> {{ profile.email }} <button type="button" class="btn btn-primary btn-md" (click)="openCheckout()">Donate to us</button></h1>
+          <h2>About - {{ profile.description }}</h2>
+          <h2>Objective - {{ profile.objective }}</h2>
+
         </div>
       </div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="row">
-
-      <div class="col-xs-12 col-md-10 offset-md-1">
-        <div class="articles-toggle">
-          <ul class="nav nav-pills outline-active">
-            <li class="nav-item">
-              <a class="nav-link">
-                My Posts
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link">
-                Favorited Posts
-              </a>
-            </li>
-          </ul>
-        </div>
-
-      </div>
-
     </div>
   </div>
 

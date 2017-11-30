@@ -22,7 +22,11 @@ export class AuthComponent implements OnInit {
 	){
 	 this.authForm=this.fb.group({
 	   'email':[''],
-	   'password':['']
+	   'password':[''],
+     'description':[''],
+     'objective':[''],
+     'address':[''],
+     'org':['true']
 	 });
 	}
 
@@ -30,12 +34,10 @@ export class AuthComponent implements OnInit {
 	  this.route.url.subscribe(data => {
          this.authType = data[data.length-1].path;
          this.title = (this.authType === 'login') ? 'Sign In' : 'Sign Up';
-         if(this.authType === 'register'){
-            this.authForm.addControl('username', new FormControl(''));
-         }
-         else {
-        this.authForm.addControl('username', new FormControl(''));
-      }
+         if(this.authType !== 'ngoregister'){
+           this.authForm.setValue({'org':['false']})
+         };
+         this.authForm.addControl('username', new FormControl(''));
 	  });
 	}
 

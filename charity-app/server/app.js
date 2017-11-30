@@ -8,11 +8,12 @@ var mongoose = require('mongoose');
 var cors = require('cors');
 require('./models/User');
 require('./config/passport');
+var devdb = require('./config/dev.json');
+var testdb = require('./config/test.json');
 var index = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
-
 // Add headers
 app.use(function (req, res, next) {
 
@@ -36,8 +37,6 @@ app.use(function (req, res, next) {
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -45,7 +44,15 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //mongoose.connect('mongodb://localhost/charapp');
-mongoose.connect('mongodb://vasuki:vasuki@ds115085.mlab.com:15085/char_app')
+//mongoose.connect('mongodb://vasuki:vasuki@ds115085.mlab.com:15085/char_app');
+//mongoose.connect(devdb.MONGODB_URI);
+if(process.env === 'test'){
+    mongoose.connect(testdb.MONGODB_URI);
+}
+else {
+    mongoose.connect(devdb.MONGODB_URI);
+}
+
 app.use(require('./routes'));
 app.use('/', index);
 app.use('/users', users);

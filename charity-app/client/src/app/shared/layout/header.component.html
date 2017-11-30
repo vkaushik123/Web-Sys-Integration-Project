@@ -21,7 +21,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/home">Home</a>
+        <a class="nav-link" routerLink="/ngo">Home</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['/login']" routerLinkActive="active">Sign In</a>
@@ -30,7 +30,7 @@
         <a class="nav-link" [routerLink]="['/register']" routerLinkActive="active">Register</a>
       </li>
       <li class="nav-item">
-        <a href="#" class="btn btn-fb"><i class="fa fa-facebook" style="vertical-align: middle"></i> Facebook</a>
+        <a class="nav-link" (click)="logout()">Logout</a>
       </li>
     </ul>
   </div>

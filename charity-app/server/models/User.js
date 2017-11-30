@@ -6,6 +6,10 @@ var secret = require('../config').secret;
 var UserSchema = new mongoose.Schema({
 	username: String,
 	email:String,
+	description: String,
+	objective: String,
+	address: String,
+	initiatives:[String],
 	org:Boolean,
 	hash:String,
 	salt:String
@@ -37,6 +41,10 @@ UserSchema.methods.toJSON = function(){
 		username: this.username,
 		email:this.email,
 		org:this.org,
+		description:this.description,
+		objective:this.objective,
+		address:this.address,
+		initiatives:this.initiatives,
 		token:this.generateJWT(),
 	};
 };
@@ -45,7 +53,11 @@ UserSchema.methods.toProfile = function(){
 	return{
 		username:this.username,
 		email:this.email,
-		org:this.org
+		org:this.org,
+		description:this.description,
+		objective:this.objective,
+		address:this.address,
+        initiatives:this.initiatives,
 	};
 };
 mongoose.model('User',UserSchema);

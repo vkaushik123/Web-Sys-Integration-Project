@@ -11,15 +11,32 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/users', function(req,res,next){
-	var user = new User();
-	user.username = req.body.user.username;
-	user.email = req.body.user.email;
-	user.org = req.body.user.org;
-	user.setPassword(req.body.user.password);
+    if(!req.body.user.email){
+        return res.status(422).json({errors:{email:"cannot be Null"}});
+    }
 
-	user.save().then(function(){
-		return res.json({user: user.toJSON()});
-	}).catch(next);
+    if(!req.body.user.password){
+        return res.status(422).json({errors:{password:"cannot be Null"}});
+    }
+    User.findOne({email:req.body.user.email}).then(function(user){
+    	if(user){
+    	return res.status(422).json({errors:{email:"User already exists"}});
+        }
+        else{
+            var user = new User();
+            user.username = req.body.user.username;
+            user.email = req.body.user.email;
+            user.org = req.body.user.org;
+            user.objective = req.body.user.objective;
+            user.initiatives = req.body.user.initiatives;
+            user.address = req.body.user.address;
+            user.setPassword(req.body.user.password);
+            user.description = req.body.user.description;
+            user.save().then(function(){
+                return res.json({user: user.toJSON()});
+            }).catch(next);
+		}
+    });
 });
 
 router.get('/user', function(req, res) {

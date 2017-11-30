@@ -3,11 +3,12 @@
  */
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { User, UserService, Profile } from '../shared';
+import { User, UserService, Profile} from '../shared';
 
 @Component({
   selector: 'profile-page',
-  templateUrl:'./profile.component.html'
+  templateUrl:'./profile.component.html',
+  styleUrls:['./profile.component.css']
 })
 
 export class ProfileComponent implements OnInit {
@@ -25,11 +26,10 @@ export class ProfileComponent implements OnInit {
         }
       });
 
-      handler.open({
-        name:'Demo Site',
-        description: '2 widgets',
-        amount : 2000
-      });
+    handler.open({
+      name:'Payment Gateway',
+      description: 'Help a NGO'
+    });
   }
 
   profile: Profile;

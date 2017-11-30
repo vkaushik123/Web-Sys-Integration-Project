@@ -26,8 +26,8 @@ export class NgoComponent implements OnInit{
     });
 
     handler.open({
-      name:'Demo Site',
-      description: '2 widgets',
+      name:'Payment Gateway',
+      description: 'Help a NGO',
       amount : 2000
     });
   }

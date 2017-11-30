@@ -1,7 +1,7 @@
 <div class="auth-page">
-  <div class="cotainer page">
+  <div class="container">
     <div class="row">
-  	<div class="col-md-3 offset-md-1 col-xs-9">
+  	<div class="col-md-3 offset-md-4 col-xs-9">
   		<div>
   			<h1>{{ title }}</h1>
   			<p>
@@ -44,6 +44,30 @@
                 placeholder="Password"
                 class="form-control form-control-lg"
                 type="password" ngModel required/>
+            </fieldset>
+            <fieldset class="form-group">
+              <input
+                formControlName="description"
+                placeholder="Description"
+                class="form-control form-control-lg"
+                type="text"
+                *ngIf="authType=='ngoregister'"/>
+            </fieldset>
+            <fieldset class="form-group">
+              <input
+                formControlName="objective"
+                placeholder="Objective"
+                class="form-control form-control-lg"
+                type="text"
+                *ngIf="authType=='ngoregister'"/>
+            </fieldset>
+            <fieldset class="form-group">
+              <input
+                formControlName="address"
+                placeholder="Address"
+                class="form-control form-control-lg"
+                type="text"
+                *ngIf="authType=='ngoregister'"/>
             </fieldset>
   					<button class="btn btn-success pull-left" type="submit">
   						{{ title }}

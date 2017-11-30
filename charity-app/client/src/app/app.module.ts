@@ -45,7 +45,8 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([],{ useHash:true}
     AuthGuard,
     JwtService,
     UserService,
-    NgoService
+    NgoService,
+    ProfileService
   ],
   bootstrap: [AppComponent]
 })

@@ -4,3 +4,5 @@
 .btn{
   float: right;
 }
+
+.list-group{height:500px; width:1150px; overflow-y: auto ;}
