@@ -9,7 +9,7 @@ import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class NgoService {
-  private _url: string = "http://localhost:3000/user"
+  private _url: string = "http://ec2-52-90-176-159.compute-1.amazonaws.com:9000/user"
   constructor(private _http: Http) {}
   getData(){
      return this._http.get(this._url)

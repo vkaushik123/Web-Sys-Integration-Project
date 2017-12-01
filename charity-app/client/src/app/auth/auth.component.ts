@@ -22,6 +22,7 @@ export class AuthComponent implements OnInit {
 	){
 	 this.authForm=this.fb.group({
 	   'email':[''],
+     'username':[''],
 	   'password':[''],
      'description':[''],
      'objective':[''],

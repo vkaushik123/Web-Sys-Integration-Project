@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  api_url:'http://localhost:3000'
+  api_url:'http://ec2-52-90-176-159.compute-1.amazonaws.com:9000'
 };
