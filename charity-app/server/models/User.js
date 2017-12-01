@@ -5,6 +5,7 @@ var secret = require('../config').secret;
 
 var UserSchema = new mongoose.Schema({
 	username: String,
+	ngoname:String,
 	email:String,
 	description: String,
 	objective: String,
@@ -40,6 +41,7 @@ UserSchema.methods.toJSON = function(){
 	return {
 		username: this.username,
 		email:this.email,
+		ngoname:this.ngoname,
 		org:this.org,
 		description:this.description,
 		objective:this.objective,
@@ -53,6 +55,7 @@ UserSchema.methods.toProfile = function(){
 	return{
 		username:this.username,
 		email:this.email,
+		ngoname:this.ngoname,
 		org:this.org,
 		description:this.description,
 		objective:this.objective,

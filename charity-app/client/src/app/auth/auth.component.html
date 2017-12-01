@@ -21,16 +21,8 @@
   						  placeholder="Username"
   						  class="form-control form-control-lg"
   						  type="text"
-  						  *ngIf="authType=='register'" required/>
+  						  *ngIf="authType=='register' || authType == 'ngoregister'" required/>
   					</fieldset>
-            <fieldset class="form-group">
-              <input
-                formControlName="username"
-                placeholder="NgoName"
-                class="form-control form-control-lg"
-                type="text"
-                *ngIf="authType=='ngoregister'"/>
-            </fieldset>
   					<fieldset class="form-group">
   						<input
   						  formControlName="email"

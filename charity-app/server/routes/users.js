@@ -25,6 +25,7 @@ router.post('/users', function(req,res,next){
         else{
             var user = new User();
             user.username = req.body.user.username;
+            user.ngoname = req.body.user.ngoname;
             user.email = req.body.user.email;
             user.org = req.body.user.org;
             user.objective = req.body.user.objective;

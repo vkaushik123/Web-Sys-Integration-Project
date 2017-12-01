@@ -36,7 +36,7 @@ export class AuthComponent implements OnInit {
          this.authType = data[data.length-1].path;
          this.title = (this.authType === 'login') ? 'Sign In' : 'Sign Up';
          if(this.authType !== 'ngoregister'){
-           this.authForm.setValue({'org':['false']})
+           this.authForm.patchValue({'org':false});
          };
          this.authForm.addControl('username', new FormControl(''));
 	  });
